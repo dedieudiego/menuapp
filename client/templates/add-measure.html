@@ -1,0 +1,15 @@
+<ion-view view-title="Agregar medida">
+  <ion-content>
+    <ion-list>
+     	<label class="item item-input item-floating-label">
+        	<span class="input-label">Medida</span>
+        	<input ng-model="admin.measure" type="text" placeholder="Medida">
+      	</label>
+      	<label class="item item-input item-floating-label">
+        	<span class="input-label">Abreviación</span>
+        	<input ng-model="admin.measureAbbr" type="text" placeholder="Abreviación">
+      	</label>
+    	<button ng-click="admin.addMeasure()" class="button button-block button-positive">AGREGAR</button>
+    </ion-list>
+  </ion-content>
+</ion-view>

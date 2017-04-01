@@ -1,0 +1,15 @@
+<ion-view view-title="Agregar dificultad">
+  <ion-content>
+    <ion-list>
+      	<label class="item item-input item-floating-label">
+        	<span class="input-label">Dificultad</span>
+        	<input ng-model="admin.difficulty" type="text" placeholder="Dificultad">
+      	</label>
+      	<label class="item item-input item-floating-label">
+        	<span class="input-label">Estrellas</span>
+        	<input ng-model="admin.difficultyStars" type="number" placeholder="Ranking">
+      	</label>
+    	<button ng-click="admin.addDifficulty()" class="button button-block button-positive">AGREGAR</button>
+    </ion-list>
+  </ion-content>
+</ion-view>

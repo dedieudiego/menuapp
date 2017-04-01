@@ -1,0 +1,89 @@
+<ion-view view-title="Agregar receta">
+  <ion-content>
+    <ion-list>
+      	<ion-item>
+      		<label for="categorySelect" class="item item-input item-select">
+      			Categoria
+	      		<select name="categorySelect" ng-model="admin.recipeCategory" ng-options="category.name for category in admin.categories">
+	      			<option value="">Seleccionar categoria</option>
+	      		</select>
+      		</label>
+      	</ion-item>
+
+      	<ion-item>
+      		<label for="subCategorySelect" class="item item-input item-select">
+      			Sub-Categoria
+	      		<select name="subCategorySelect" ng-model="admin.recipeSubCategory" ng-options="subcategory.name for subcategory in admin.subcategories">
+	      			<option value="">Seleccionar sub-categoria</option>
+	      		</select>
+      		</label>
+      	</ion-item>
+
+      	<ion-item>
+      		<label class="item item-input">
+	        	<input ng-model="admin.recipeName" type="text" placeholder="Nombre de la receta">
+	      	</label>
+	      	<label class="item item-input">
+	        	<input ng-model="admin.recipeSubtitle" type="text" placeholder="Subtitulo">
+	      	</label>
+	      	<label class="item item-input">
+	      		<span class="input-label">Imagen de receta</span>
+	        	<input ng-model="admin.recipeImage" type="file" placeholder="Imagen" id="fileInput">
+	      	</label>
+      	</ion-item>
+
+      	<ion-item>
+			<span>Ingredientes</span>
+			<br><br>
+			<div class="newIngredient">
+				<label class="item item-input">
+		        	<input ng-model="admin.recipeIngredientQty" type="number" placeholder="Cantidad">
+		      	</label>
+		      	<label for="ingredientSelect" class="item item-input item-select">
+	      			Ingrediente
+		      		<select name="ingredientSelect" ng-model="admin.recipeIngredient" ng-options="ingredient.name for ingredient in admin.ingredients | orderBy:'name'">
+		      			<option value="">Seleccionar ingrediente</option>
+		      		</select>
+	      		</label>
+	      		<label for="measureSelect" class="item item-input item-select">
+	      			Medida
+		      		<select name="measureSelect" ng-model="admin.recipeMeasure" ng-options="measure.name for measure in admin.measures | orderBy:'name'">
+		      			<option value="">Seleccionar medida</option>
+		      		</select>
+	      		</label>
+	      		<button class="button button-block button-assertive removeIngredient">ELIMINAR</button>
+			</div>
+			<button class="button button-block button-positive" id="moreIngredients" ng-click="admin.addIngredients()">Agregar mas ingredientes</button>
+      	</ion-item>
+
+      	<ion-item>
+      		<label for="difficultySelect" class="item item-input item-select">
+      			Dificultad
+	      		<select name="difficultySelect" ng-model="admin.recipeDifficulty" ng-options="difficulty.name for difficulty in admin.difficulties">
+	      			<option value="">Seleccionar dificutad</option>
+	      		</select>
+      		</label>
+      		<label class="item item-input">
+	        	<input ng-model="admin.recipeTime" type="number" placeholder="Tiempo">
+	      	</label>
+	      	<label class="item item-input">
+	        	<input ng-model="admin.recipeEaters" type="number" placeholder="Comensales">
+	      	</label>
+      	</ion-item>
+
+      	<ion-item>
+			<span>Pasos</span>
+			<br><br>
+			<div class="newStep">
+				<label class="item item-input">
+		        	<textarea ng-model="admin.recipeSteps"></textarea>
+		      	</label>
+	      		<button class="button button-block button-assertive removeStep">ELIMINAR</button>
+			</div>
+			<button class="button button-block button-positive" id="moreSteps" ng-click="admin.addSteps()">Agregar mas pasos</button>
+      	</ion-item>
+
+    	<button ng-click="admin.addRecipe()" class="button button-block button-positive">AGREGAR</button>
+    </ion-list>
+  </ion-content>
+</ion-view>

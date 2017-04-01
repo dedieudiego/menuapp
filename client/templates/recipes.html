@@ -1,0 +1,18 @@
+<ion-view view-title="Recetas">
+	<ion-content>
+		<div class="list card" ng-repeat="recipe in recipes.recipes">
+
+		  <div class="item item-avatar">
+		    <img ng-src="{{recipe.image}}">
+		    <h2>{{recipe.name}}</h2>
+		    <p>{{recipe.category}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="{{recipe.image}}">
+		    <p>{{recipe.subtitle}}</p>
+		  </div>
+
+		</div>
+	</ion-content>
+</ion-view>
