@@ -1,10 +1,18 @@
 import { Meteor } from 'meteor/meteor';
-import { Recipes, Categories, SubCategories, Ingredients, Measures, Difficulties, Users } from '../lib/collections';
+import { Recipes, Categories, SubCategories, Ingredients, Measures, Difficulties, Users, Menus } from '../lib/collections';
  
 Meteor.publishComposite('users', function() {
   return {
     find() {
       return Users.find();
+    }
+  };
+});
+
+Meteor.publishComposite('menus', function() {
+  return {
+    find() {
+      return Menus.find();
     }
   };
 });

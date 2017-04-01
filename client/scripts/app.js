@@ -14,6 +14,8 @@ import { Session } from 'meteor/session';
 import UsersCtrl from './controllers/users.controller';
 import AdminCtrl from './controllers/admin.controller';
 import RecipesCtrl from './controllers/recipes.controller';
+import RecipeCtrl from './controllers/recipe.controller';
+import MenuCtrl from './controllers/menu.controller';
 import InputDirective from './directives/input.directive';
 import RoutesConfig from './routes';
  
@@ -29,6 +31,8 @@ new Loader(App)
   .load(AdminCtrl)
   .load(UsersCtrl)
   .load(RecipesCtrl)
+  .load(RecipeCtrl)
+  .load(MenuCtrl)
   .load(InputDirective)
   .load(RoutesConfig);
  

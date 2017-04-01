@@ -1,0 +1,51 @@
+<ion-view view-title="{{recipe.data.name}}">
+	<ion-content>
+		<div class="list card">
+
+		  <div class="item item-avatar">
+		    <img ng-src="{{recipe.data.image}}">
+		    <h2>{{recipe.data.name}}</h2>
+		    <p>{{recipe.data.category}}</p>
+		    <p>{{recipe.data.subcategory}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="{{recipe.data.image}}">
+		    <p>{{recipe.data.subtitle}}</p>
+		  </div>
+
+		  <ion-list>
+		  	<h4 style="text-align: center;">Ingredientes</h4>
+		  	<ion-item ng-repeat="ingredient in recipe.data.ingredients">
+		  		<div>{{ingredient.ingredient}} {{ingredient.qty}} {{ingredient.measure}}</div>
+		  	</ion-item>
+		  </ion-list>
+
+		  <div class="row">
+		  	<div class="col col-33" style="text-align: center;">
+		  		<i class="icon ion-ios-timer-outline"></i>
+		  		<h5>Tiempo</h5>
+		  		<p>{{recipe.data.time}}</p>
+		  	</div>
+		  	<div class="col col-33" style="text-align: center;">
+		  		<i class="icon ion-levels"></i>
+		  		<h5>Dificultad</h5>
+		  		<p>{{recipe.data.difficulty}}</p>
+		  	</div>
+		  	<div class="col col-33" style="text-align: center;">
+		  		<i class="icon ion-ios-pie-outline"></i>
+		  		<h5>Porciones</h5>
+		  		<p>{{recipe.data.eaters}}</p>
+		  	</div>
+		  </div>
+
+		  <ion-list>
+		  	<h4 style="text-align: center;">Pasos</h4>
+		  	<ion-item ng-repeat="step in recipe.data.steps">
+		  		<div>{{step.text}}</div>
+		  	</ion-item>
+		  </ion-list>
+
+		</div>
+	</ion-content>
+</ion-view>

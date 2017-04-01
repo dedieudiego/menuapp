@@ -68,6 +68,16 @@ class RoutesConfig extends Config {
         templateUrl: 'client/templates/home.html',
         controller: 'RecipesCtrl as recipes'
       })
+      .state('menu', {
+        url: '/menu',
+        templateUrl: 'client/templates/menu.html',
+        controller: 'MenuCtrl as menu'
+      })
+      .state('recipe', {
+        url: '/recipe/:id',
+        templateUrl: 'client/templates/recipe.html',
+        controller: 'RecipeCtrl as recipe'
+      })
  
     this.$urlRouterProvider.otherwise('login');
   }

@@ -10,6 +10,10 @@
 		<ion-checkbox ng-model="recipes.sunday">Domingo</ion-checkbox>
 	</ion-list>
 	<div>Somos <input class="inputPeople" ng-model="recipes.people" type="number"> personas</div>
+	<ion-list>
+		<ion-radio ng-model="recipes.menuSubcategory" value="all">Todas</ion-radio>
+		<ion-radio ng-model="recipes.menuSubcategory" ng-repeat="subcategory in recipes.subcategories" ng-value="subcategory.name">{{subcategory.name}}</ion-radio>
+	</ion-list>
 	<button class="button button-block button-positive" ng-click='recipes.generateMenu()'>GENERAR</button>
   </ion-content>
 </ion-view>

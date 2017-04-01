@@ -1,0 +1,32 @@
+<ion-view view-title="Menú">
+  <ion-content>
+  	<ion-list>
+  		<ion-item ng-repeat="recipe in menu.recipes">
+			<div class="list card">
+			  <h1>{{recipe.day}}</h1>
+			  <div class="item item-avatar">
+			    <img ng-src="{{recipe.image}}">
+			    <h2>{{recipe.name}}</h2>
+			    <p>{{recipe.subtitle}}</p>
+			  </div>
+
+			  <div class="item item-image">
+			    <img ng-src="{{recipe.image}}">
+			  </div>
+
+			  <a class="item item-icon-left assertive" href="#">
+			    <i class="icon ion-ios-loop-strong"></i>
+			    Cambiar receta
+			  </a>
+
+			  <a class="item item-icon-left assertive" href="/recipe/{{recipe._id}}">
+			    <i class="icon ion-fork"></i>
+			    Ver preparación
+			  </a>
+
+			</div>
+  		</ion-item>
+  	</ion-list>
+  	<button class="button button-block button-positive" ng-click='menu.saveMenu()'>CONFIRMAR</button>
+  </ion-content>
+</ion-view>
