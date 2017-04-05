@@ -1,13 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Recipes, Categories, SubCategories, Ingredients, Measures, Difficulties, Users, Menus } from '../lib/collections';
- 
-Meteor.publishComposite('users', function() {
-  return {
-    find() {
-      return Users.find();
-    }
-  };
-});
+import { Recipes, Categories, SubCategories, Ingredients, Measures, Difficulties, Menus } from '../lib/collections';
 
 Meteor.publishComposite('menus', function() {
   return {

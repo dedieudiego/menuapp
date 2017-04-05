@@ -24,3 +24,8 @@ check
 reywood:publish-composite
 jquery
 fourseven:scss
+accounts-ui
+accounts-facebook
+accounts-password
+dotansimha:accounts-ui-angular
+facebook-config-ui

@@ -9,6 +9,7 @@ import Angular from 'angular';
 import Loader from 'angular-ecmascript/module-loader';
 import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
+import { Accounts } from 'meteor/accounts-base';
  
 // Modules
 import UsersCtrl from './controllers/users.controller';
@@ -24,7 +25,8 @@ const App = 'Menú App';
 // App
 Angular.module(App, [
   'angular-meteor',
-  'ionic'
+  'ionic',
+  'accounts.ui'
 ]);
 
 new Loader(App)
@@ -46,4 +48,7 @@ else {
  
 function onReady() {
   Angular.bootstrap(document, [App]);
+  Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_ONLY',
+  });
 }

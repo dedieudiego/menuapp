@@ -1,14 +1,5 @@
 <ion-view view-title="Login">
 	<ion-content>
-  	<label class="item item-input item-floating-label">
-    	<span class="input-label">Email</span>
-    	<input ng-model="user.logEmail" type="email" placeholder="Email">
-  	</label>
-  	<label class="item item-input item-floating-label">
-    	<span class="input-label">Password</span>
-    	<input ng-model="user.logPassword" type="password" placeholder="Password">
-  	</label>
-  	<button ng-click="user.login()" class="button button-block button-positive">LOGIN</button>
-    <button ng-click="user.goRegister()" class="button button-block button-negative">REGISTRAR USUARIO</button>
+  	<login-buttons></login-buttons>
 	</ion-content>
 </ion-view>
