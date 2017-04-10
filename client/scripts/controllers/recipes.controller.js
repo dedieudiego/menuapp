@@ -9,15 +9,27 @@ export default class RecipesCtrl extends Controller {
       super(...arguments);
       this.subscribe('recipes');
       this.subscribe('subcategories');
+      this.subscribe('users');
       this.menuSubcategory = "all";
 
-      let loggedUser = localStorage.getItem('loggedUser');
+      let loggedUser = localStorage.getItem('Meteor.userId');
+      let user = Meteor.user();
       if(!loggedUser) {
         this.$ionicHistory.nextViewOptions({
           disableAnimate: true,
           disableBack: true
         });
         this.$state.go('login');
+      };
+      if(user) {
+        let notFirstTime = user.notFirstTime;
+        if(!notFirstTime) {
+          this.callMethod('firstTime', Meteor.userId(), (err) => {
+            if (err) return this.handleError(err);
+
+            this.$state.go('completeuser');
+          });
+        };
       }
 
       this.helpers({

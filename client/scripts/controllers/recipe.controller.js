@@ -11,7 +11,7 @@ export default class RecipeCtrl extends Controller {
 
       this.recipeId = this.$stateParams.id;
 
-      let loggedUser = localStorage.getItem('loggedUser');
+      let loggedUser = localStorage.getItem('Meteor.userId');
       if(!loggedUser) {
         this.$ionicHistory.nextViewOptions({
           disableAnimate: true,

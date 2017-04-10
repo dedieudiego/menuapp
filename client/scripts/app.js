@@ -13,6 +13,7 @@ import { Accounts } from 'meteor/accounts-base';
  
 // Modules
 import UsersCtrl from './controllers/users.controller';
+import UserCtrl from './controllers/user.controller';
 import AdminCtrl from './controllers/admin.controller';
 import RecipesCtrl from './controllers/recipes.controller';
 import RecipeCtrl from './controllers/recipe.controller';
@@ -32,6 +33,7 @@ Angular.module(App, [
 new Loader(App)
   .load(AdminCtrl)
   .load(UsersCtrl)
+  .load(UserCtrl)
   .load(RecipesCtrl)
   .load(RecipeCtrl)
   .load(MenuCtrl)

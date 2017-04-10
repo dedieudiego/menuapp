@@ -1,6 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Recipes, Categories, SubCategories, Ingredients, Measures, Difficulties, Menus } from '../lib/collections';
 
+Meteor.publish('users', function() {
+  return Meteor.users.find({}, { fields: { profile: 1, notFirstTime: 1 } });
+});
+
 Meteor.publishComposite('menus', function() {
   return {
     find() {

@@ -11,7 +11,7 @@ export default class MenuCtrl extends Controller {
     const subs = this.subscribe('categories');
 
     const thisVar = this;
-    let loggedUser = localStorage.getItem('loggedUser');
+    let loggedUser = localStorage.getItem('Meteor.userId');
     this.days = Session.get('menuDays');
     this.subCategory = Session.get('menuSubcategory');
     this.people = Session.get('menuPeople');

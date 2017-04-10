@@ -63,6 +63,11 @@ class RoutesConfig extends Config {
         templateUrl: 'client/templates/login.html',
         controller: 'UsersCtrl as user'
       })
+      .state('completeuser', {
+        url: '/completeuser',
+        templateUrl: 'client/templates/complete-user.html',
+        controller: 'UserCtrl as user'
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'client/templates/home.html',
